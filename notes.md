@@ -1,6 +1,7 @@
 ## work on slides feature
 
 - I need to able to set a theme
+- to_json is broken
 
 ## Publishing the package
 

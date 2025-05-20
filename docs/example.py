@@ -125,3 +125,5 @@ This is the source code for this document:
 """)
 
 nb.save()
+
+# nb.dump_json() # broken
