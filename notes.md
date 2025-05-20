@@ -1,3 +1,7 @@
+## work on slides feature
+
+- I need to able to set a theme
+
 ## Publishing the package
 
 ### renaming to nobe

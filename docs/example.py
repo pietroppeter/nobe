@@ -68,7 +68,7 @@ nb.text(
 
 nb.text("## Latex")
 
-nb.text("""
+nb.text(r"""
 Latex support is available thanks to [katex](https://katex.org/)
 with single `$` delimiting inline latex and double `$$` delimit formulas in display mode.
         
@@ -80,7 +80,9 @@ As an example of display mode, here is a convergent [geometric series](https://e
 $$
 1 + \\frac{1}{2} + \\frac{1}{4} + \cdots = \sum_{k=0}^{+\infty} \\frac{1}{2^k} = 2
 $$        
-""" # note that I have to use a double back slash to avoid typing the "form feed" escape character
+"""
+# note that I have to use a double back slash to avoid typing the "form feed" escape character
+# also I am using the raw string literal or \p would be marked as invalid escape sequence
 )
 
 nb.text("## Pyscript")
