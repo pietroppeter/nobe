@@ -3,6 +3,17 @@
 - I need to able to set a theme
 - to_json is broken
 
+### how to customize a theme
+
+- currently we import a theme module that provides apis to Doc (head, doc), Code (code) and Image (image) blocks
+- an option could be to add a way for the module to update the api (a theme.set("slides"))
+- this could be done with or without changing the Doc object
+- reference to change for a slides theme: https://github.com/HugoGranstrom/nimiSlides/blob/main/src/nimiSlides.nim
+- two options I see now:
+  - either I add a theme object to block hierarchy (and a parent relationship to get theme from parent)
+  - or I use a global theme object
+- maybe for the moment it is simpler the second option
+
 ## Publishing the package
 
 ### renaming to nobe

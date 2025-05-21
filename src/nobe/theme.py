@@ -1,3 +1,5 @@
+from pydantic import BaseModel
+
 head = """
 <head>
   <meta content="text/html; charset=utf-8" http-equiv="content-type">
@@ -51,3 +53,10 @@ code = """
 image = """
 <img src="{url}", alt="{alt}">
 """
+
+
+class Theme(BaseModel):
+    doc: str = doc
+    head: str = head
+    code: str = code
+    image: str = image

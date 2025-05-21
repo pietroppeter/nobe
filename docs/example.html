@@ -200,7 +200,8 @@ nb.text(
 
 nb.text(&quot;## Latex&quot;)
 
-nb.text(r&quot;&quot;&quot;
+nb.text(
+    r&quot;&quot;&quot;
 Latex support is available thanks to [katex](https://katex.org/)
 with single `$` delimiting inline latex and double `$$` delimit formulas in display mode.
 
@@ -213,8 +214,8 @@ $$
 1 + \\frac{1}{2} + \\frac{1}{4} + \cdots = \sum_{k=0}^{+\infty} \\frac{1}{2^k} = 2
 $$        
 &quot;&quot;&quot;
-# note that I have to use a double back slash to avoid typing the &quot;form feed&quot; escape character
-# also I am using the raw string literal or \p would be marked as invalid escape sequence
+    # note that I have to use a double back slash to avoid typing the &quot;form feed&quot; escape character
+    # also I am using the raw string literal or \p would be marked as invalid escape sequence
 )
 
 nb.text(&quot;## Pyscript&quot;)
@@ -243,8 +244,8 @@ def add_emoji(event):
 &lt;/mpy-script&gt;        
 &quot;&quot;&quot;)
 
-nb.html(&quot;&lt;button mpy-click=\&quot;add_emoji\&quot;&gt;More emojis!&lt;/button&gt;&lt;br/&gt;&quot;)
-nb.html(&quot;&lt;div id=\&quot;emoji-container\&quot;&gt;&lt;/div&gt;&quot;)
+nb.html('&lt;button mpy-click=&quot;add_emoji&quot;&gt;More emojis!&lt;/button&gt;&lt;br/&gt;')
+nb.html('&lt;div id=&quot;emoji-container&quot;&gt;&lt;/div&gt;')
 
 nb.text(f&quot;&quot;&quot;## Source code
 
@@ -259,6 +260,7 @@ This is the source code for this document:
 nb.save()
 
 # nb.dump_json() # broken
+
 </code></pre>
 </main>
 </body>

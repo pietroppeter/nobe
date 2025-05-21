@@ -68,7 +68,8 @@ nb.text(
 
 nb.text("## Latex")
 
-nb.text(r"""
+nb.text(
+    r"""
 Latex support is available thanks to [katex](https://katex.org/)
 with single `$` delimiting inline latex and double `$$` delimit formulas in display mode.
         
@@ -81,8 +82,8 @@ $$
 1 + \\frac{1}{2} + \\frac{1}{4} + \cdots = \sum_{k=0}^{+\infty} \\frac{1}{2^k} = 2
 $$        
 """
-# note that I have to use a double back slash to avoid typing the "form feed" escape character
-# also I am using the raw string literal or \p would be marked as invalid escape sequence
+    # note that I have to use a double back slash to avoid typing the "form feed" escape character
+    # also I am using the raw string literal or \p would be marked as invalid escape sequence
 )
 
 nb.text("## Pyscript")
@@ -111,8 +112,8 @@ def add_emoji(event):
 </mpy-script>        
 """)
 
-nb.html("<button mpy-click=\"add_emoji\">More emojis!</button><br/>")
-nb.html("<div id=\"emoji-container\"></div>")
+nb.html('<button mpy-click="add_emoji">More emojis!</button><br/>')
+nb.html('<div id="emoji-container"></div>')
 
 nb.text(f"""## Source code
 
