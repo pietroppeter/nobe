@@ -10,7 +10,8 @@ from pydantic import BaseModel
 from nobe import source
 from nobe.theme import Theme
 
-theme = Theme()
+theme = Theme() # global module variable, to customize a theme modify with `import nobe; nobe.theme = ...`
+# note that (`from nobe import theme; theme = ...` will not work)
 
 
 class Block(BaseModel):

@@ -1,7 +1,6 @@
-#from pydantic import BaseModel
-from dataclasses import dataclass
+from pydantic import BaseModel
 
-head = """
+head_default = """
 <head>
   <meta content="text/html; charset=utf-8" http-equiv="content-type">
   <meta content="width=device-width, initial-scale=1" name="viewport">
@@ -34,7 +33,7 @@ head = """
 </head>
 """
 
-doc = """
+doc_default = """
 <!DOCTYPE html>
 <html lang="en-us">
 {head}
@@ -46,20 +45,18 @@ doc = """
 </html>
 """
 
-code = """
+code_default = """
 <pre><code class="python">{source}</code></pre>
 <pre>{stdout}</pre>
 """
 
-image = """
+image_default = """
 <img src="{url}", alt="{alt}">
 """
 
 
-#class Theme(BaseModel):
-@dataclass
-class Theme:
-    doc: str = doc
-    head: str = head
-    code: str = code
-    image: str = image
+class Theme(BaseModel):
+    doc: str = doc_default
+    head: str = head_default
+    code: str = code_default
+    image: str = image_default

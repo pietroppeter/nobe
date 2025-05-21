@@ -16,6 +16,7 @@
 - but maybe it does not work, current implementation fails with 
 `AttributeError: 'Theme' object has no attribute 'slide'`
 so the global object was not recognized (I though it was a pydantic)
+- understood the problem! it is `import nobe; nobe.theme = ...` and not `from nobe import theme; theme = ...`
 
 I am stuck
 

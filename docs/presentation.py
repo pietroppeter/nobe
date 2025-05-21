@@ -1,10 +1,9 @@
-from nobe import theme
+import nobe
 from nobe.slides import Presentation, SlidesTheme
 
 nb = Presentation()
-theme = SlidesTheme()
-print(type(theme))
-
+nobe.theme = SlidesTheme()
+hey = SlidesTheme()
 nb.slide("""
 # title
          
