@@ -13,6 +13,11 @@
   - either I add a theme object to block hierarchy (and a parent relationship to get theme from parent)
   - or I use a global theme object
 - maybe for the moment it is simpler the second option
+- but maybe it does not work, current implementation fails with 
+`AttributeError: 'Theme' object has no attribute 'slide'`
+so the global object was not recognized (I though it was a pydantic)
+
+I am stuck
 
 ## Publishing the package
 

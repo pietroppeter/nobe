@@ -1,4 +1,5 @@
-from pydantic import BaseModel
+#from pydantic import BaseModel
+from dataclasses import dataclass
 
 head = """
 <head>
@@ -55,7 +56,9 @@ image = """
 """
 
 
-class Theme(BaseModel):
+#class Theme(BaseModel):
+@dataclass
+class Theme:
     doc: str = doc
     head: str = head
     code: str = code
