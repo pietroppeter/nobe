@@ -17,8 +17,16 @@ uv run --with nobe-literate example.py
 open example.html
 ```
 
+## slides
+
+Thanks to [reveal.js] you can also use nobe to produce slides: here is an example [presentation](https://pietroppeter.github.io/nobe/presentation.html).
+Check the source in [docs/presentation.py](docs/presentation.py) to understand how to acquire this power
+
+## origin
+
 It starts as [nimib.py] without [nim] but the goal is to experiment freely with a [nimib]-like python api.
 
 [nimib]: https://github.com/pietroppeter/nimib
 [nimib.py]: https://github.com/nimib-land/nimib.py
 [nim]: https://nim-lang.org/
+[reveal.js]: https://revealjs.com/

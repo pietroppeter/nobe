@@ -7,7 +7,11 @@ from typing import Callable, Optional
 import markdown
 from pydantic import BaseModel
 
-from nobe import source, theme
+from nobe import source
+from nobe.theme import Theme
+
+theme = Theme() # global module variable, to customize a theme modify with `import nobe; nobe.theme = ...`
+# note that (`from nobe import theme; theme = ...` will not work)
 
 
 class Block(BaseModel):
@@ -28,9 +32,6 @@ class Doc(Block):
     def add(self, blk: Block):
         self.blocks.append(blk)
 
-    def to_json(self) -> str:
-        return json.dumps([blk.to_json() for blk in self.blocks])
-
     def to_html(self) -> str:
         head = theme.head
         blocks = "\n".join([blk.to_html() for blk in self.blocks])
@@ -40,6 +41,9 @@ class Doc(Block):
         filename = self.filename.replace(".py", ".html")
         with open(filename, "w") as f:
             f.write(self.to_html())
+
+    def to_json(self) -> str:
+        return json.dumps([blk.to_json() for blk in self.blocks])
 
 
 class Text(Block):

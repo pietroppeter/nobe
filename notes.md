@@ -1,3 +1,26 @@
+## work on slides feature
+
+- I need to able to set a theme [x]
+- to_json is broken - this is a separate issue that I should track, but it is not priority
+
+minimal slide version is working!
+removed most features in nimislides, next one to recover might be footer (and list of reveal themes).
+
+### how to customize a theme
+
+- currently we import a theme module that provides apis to Doc (head, doc), Code (code) and Image (image) blocks
+- an option could be to add a way for the module to update the api (a theme.set("slides"))
+- this could be done with or without changing the Doc object
+- reference to change for a slides theme: https://github.com/HugoGranstrom/nimiSlides/blob/main/src/nimiSlides.nim
+- two options I see now:
+  - either I add a theme object to block hierarchy (and a parent relationship to get theme from parent)
+  - or I use a global theme object
+- maybe for the moment it is simpler the second option
+- but maybe it does not work, current implementation fails with 
+`AttributeError: 'Theme' object has no attribute 'slide'`
+so the global object was not recognized (I though it was a pydantic)
+- understood the problem! it is `import nobe; nobe.theme = ...` and not `from nobe import theme; theme = ...`
+
 ## Publishing the package
 
 ### renaming to nobe
