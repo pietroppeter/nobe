@@ -1,7 +1,10 @@
 ## work on slides feature
 
-- I need to able to set a theme
-- to_json is broken
+- I need to able to set a theme [x]
+- to_json is broken - this is a separate issue that I should track, but it is not priority
+
+minimal slide version is working!
+removed most features in nimislides, next one to recover might be footer (and list of reveal themes).
 
 ### how to customize a theme
 
@@ -17,8 +20,6 @@
 `AttributeError: 'Theme' object has no attribute 'slide'`
 so the global object was not recognized (I though it was a pydantic)
 - understood the problem! it is `import nobe; nobe.theme = ...` and not `from nobe import theme; theme = ...`
-
-I am stuck
 
 ## Publishing the package
 
