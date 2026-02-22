@@ -5,14 +5,18 @@ from typing import Callable
 
 
 def _cleanup(source):
-    # Handle nb.code with lambda
+    # Handle nb.code with single-line lambda
     source = re.sub(r"\s*nb\.code\(lambda: (.*?)\)", r"\1", source)
     # Remove nb.code decorator and any function definition
     source = re.sub(r"\s*@nb\.code\s*\n\s*def \w+\(\):\n", "", source)
     # remove global variable declarations
     source = re.sub(r"^\s*global\s+.*$", "", source, flags=re.MULTILINE)
     # Remove indentation using dedent
-    return dedent(source).strip()
+    source = dedent(source).strip()
+    # Handle multi-line lambda: inspect.getsource returns the lambda expression
+    # itself (e.g. "lambda: call(\n    ...\n)"), so strip the "lambda: " prefix.
+    source = re.sub(r"^lambda: ", "", source)
+    return source
 
 
 def getsource(callable: Callable):
